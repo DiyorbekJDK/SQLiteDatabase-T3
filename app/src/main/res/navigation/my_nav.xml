@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/fatherFragment"
+        android:name="com.diyorbek.sqlitedatabaset3.fragments.FatherFragment"
+        android:label="fragment_father"
+        tools:layout="@layout/fragment_father" />
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.diyorbek.sqlitedatabaset3.fragments.AddFoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.diyorbek.sqlitedatabaset3.fragments.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_addFoodFragment"
+            app:destination="@id/addFoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodMenuFragment"
+        android:name="com.diyorbek.sqlitedatabaset3.fragments.FoodMenuFragment"
+        android:label="fragment_food_menu"
+        tools:layout="@layout/fragment_food_menu" >
+        <action
+            android:id="@+id/action_foodMenuFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.diyorbek.sqlitedatabaset3.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/action_mainFragment_to_foodMenuFragment"
+            app:destination="@id/foodMenuFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addFoodFragment2"
+            app:destination="@id/addFoodFragment" />
+    </fragment>
+</navigation>
